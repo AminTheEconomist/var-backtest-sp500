@@ -11,3 +11,8 @@ build_deck.py
 script.md
 script.json
 slides/
+
+# study and recording aids
+reading-script.*
+practice/
+build_reading_script.py
