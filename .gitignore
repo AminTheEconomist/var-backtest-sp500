@@ -1,0 +1,13 @@
+.venv/
+data/raw/
+data/*.csv
+__pycache__/
+.DS_Store
+
+# video drafts stay local until the video ships
+deck.html
+deck_data.py
+build_deck.py
+script.md
+script.json
+slides/
