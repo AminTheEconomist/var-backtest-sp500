@@ -16,3 +16,4 @@ slides/
 reading-script.*
 practice/
 build_reading_script.py
+.pytest_cache/

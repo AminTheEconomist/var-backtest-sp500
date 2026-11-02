@@ -137,7 +137,8 @@ def main() -> None:
     table.to_csv(OUT / "breaches_by_year.csv")
     lines += ["", "## Worst years (historical-simulation breaches)", "",
               "| Year | Trading days | Historical | Parametric | Monte Carlo (t) |", "|---|---|---|---|---|"]
-    for year, row in table.sort_values("historical", ascending=False).head(8).iterrows():
+    # stable sort: years that tie on breaches stay in calendar order, so the table is the same on every machine
+    for year, row in table.sort_values("historical", ascending=False, kind="stable").head(8).iterrows():
         lines.append(f"| {year} | {row.trading_days} | {row.historical} ({row.historical_zone}) | "
                      f"{row.parametric} ({row.parametric_zone}) | {row.monte_carlo} ({row.monte_carlo_zone}) |")
 
